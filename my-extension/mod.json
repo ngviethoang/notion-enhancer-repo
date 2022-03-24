@@ -1,0 +1,58 @@
+{
+  "name": "Custom extension",
+  "id": "60beee70-63a1-4333-bd54-e36af68cca49",
+  "version": "0.0.1",
+  "description": "My custom extension",
+  "tags": ["extension", "app"],
+  "authors": [
+    {
+      "name": "Hoang",
+      "email": "ngviethoang0212@gmail.com",
+      "homepage": "https://github.com/ngviethoang",
+      "avatar": "https://avatars.githubusercontent.com/u/25498258"
+    }
+  ],
+  "css": {
+    "client": [
+      "css/client.css", 
+      "css/blockButton.css", 
+      "css/topbar.css"
+    ]
+  },
+  "js": {
+    "client": ["client.mjs"]
+  },
+  "options": [
+    {
+      "type": "toggle",
+      "key": "copy_page_id_btn",
+      "label": "Show copy page ID button",
+      "value": true
+    },
+    {
+      "type": "toggle",
+      "key": "hide_help_btn",
+      "label": "Hide help button",
+      "value": true
+    },
+    {
+      "type": "text",
+      "key": "srs_ids",
+      "label": "SRS database IDs",
+      "tooltip": "separated by comma",
+      "value": ""
+    },
+    {
+      "type": "text",
+      "key": "cors_proxy",
+      "label": "CORS proxy",
+      "value": ""
+    },
+    {
+      "type": "text",
+      "key": "notion_key",
+      "label": "Notion API key",
+      "value": ""
+    }
+  ]
+}

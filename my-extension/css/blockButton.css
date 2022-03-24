@@ -1,0 +1,29 @@
+.my_extension--block_button {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background 20ms ease-in 0s;
+  user-select: none;
+}
+.my_extension--block_button > svg {
+  display: block;
+  margin-left: 14px;
+  height: 17px;
+  width: 17px;
+  color: var(--theme--icon);
+}
+.my_extension--block_button > span {
+  margin-right: 14px;
+  margin-left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my_extension--block_button:hover {
+  background: var(--theme--ui_interactive-hover);
+}

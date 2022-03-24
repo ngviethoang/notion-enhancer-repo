@@ -1,0 +1,9 @@
+.hide-help-btn .notion-help-button {
+  display: none !important;
+}
+
+.my-extension--hidden {
+  position: absolute;
+  top: -9999px;
+  opacity: 0 !important;
+}
