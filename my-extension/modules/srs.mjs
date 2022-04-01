@@ -8,16 +8,8 @@ export default async function srs(web, components, notion, db) {
 
   const notionApiKey = await db.get(['notion_key']);
   const corsProxy = await db.get(['cors_proxy']);
-  let srsDatabaseIds = await db.get(['srs_ids']);
-  srsDatabaseIds = srsDatabaseIds.split(',');
 
   const notionApi = new NotionApi(notionApiKey, corsProxy);
-
-  const isInvalidPage = (page) => {
-    const databaseId = page.parent.database_id.replace(/-/g, '');
-    console.log(srsDatabaseIds, databaseId);
-    return !srsDatabaseIds.includes(databaseId);
-  };
 
   const srsBtns = [
     {
@@ -28,7 +20,6 @@ export default async function srs(web, components, notion, db) {
         const pageId = notion.getPageID().replace(/-/g, '');
         const page = await notionApi.getPage(pageId);
         console.log(page);
-        if (isInvalidPage(page)) return;
 
         const response = await notionApi.updatePage(pageId, {
           Level: {
@@ -53,7 +44,6 @@ export default async function srs(web, components, notion, db) {
         const pageId = notion.getPageID().replace(/-/g, '');
         const page = await notionApi.getPage(pageId);
         console.log(page);
-        if (isInvalidPage(page)) return;
 
         let nextLevel = parseInt(page.properties.Level.select?.name || 0);
         nextLevel < 10 && nextLevel++;

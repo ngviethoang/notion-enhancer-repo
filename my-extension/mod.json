@@ -37,13 +37,6 @@
     },
     {
       "type": "text",
-      "key": "srs_ids",
-      "label": "SRS database IDs",
-      "tooltip": "separated by comma",
-      "value": ""
-    },
-    {
-      "type": "text",
       "key": "cors_proxy",
       "label": "CORS proxy",
       "value": ""
